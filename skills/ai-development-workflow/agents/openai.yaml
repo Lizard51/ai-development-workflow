@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Development Workflow"
+  short_description: "Plan, test, delegate, and verify complex builds"
+  default_prompt: "Use $ai-development-workflow to clarify this idea, plan and test it, and implement it with selective Luna Medium and Sol Medium agents; keep Git optional."

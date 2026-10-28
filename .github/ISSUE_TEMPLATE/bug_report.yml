@@ -1,0 +1,28 @@
+name: Report a problem
+description: Broken installation, documentation, or observed workflow behavior
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Codex host/version, skill version, and relevant available tools. Do not include credentials.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Request and steps to reproduce
+      description: Use an anonymized example. Russian or English is welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Relevant output, errors, or a minimal example with private data removed.

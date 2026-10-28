@@ -1,0 +1,16 @@
+name: Suggest an improvement
+description: A concrete workflow or documentation improvement
+body:
+  - type: textarea
+    id: use_case
+    attributes:
+      label: What task would this help with?
+      description: Describe the concrete problem in Russian or English.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior and trade-offs
+    validations:
+      required: true
