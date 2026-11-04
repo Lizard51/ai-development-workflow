@@ -13,14 +13,16 @@ skills/domain-modeling. If a skill already exists, preserve it and explain
 the version conflict instead of overwriting it.
 ```
 
-Для воспроизводимой версии попросите использовать тег `v1.0.0`. Ветка `main` может меняться. / Request tag `v1.0.0` for a fixed snapshot; `main` may change.
+Для воспроизводимой версии попросите использовать тег `v1.1.0`. Ветка `main` может меняться. / Request tag `v1.1.0` for a fixed snapshot; `main` may change.
+
+Предыдущая версия остаётся доступна по тегу [`v1.0.0`](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.0.0). Для её установки явно укажите этот тег. / The previous version is preserved at tag `v1.0.0`; request that tag explicitly to install it.
 
 ## Вручную / Manual installation
 
 Скачайте исходники со [страницы релизов](https://github.com/Lizard51/ai-development-workflow/releases) либо клонируйте:
 
 ```sh
-git clone --branch v1.0.0 --depth 1 https://github.com/Lizard51/ai-development-workflow.git
+git clone --branch v1.1.0 --depth 1 https://github.com/Lizard51/ai-development-workflow.git
 ```
 
 Для одного проекта скопируйте три папки из `skills/` в `.agents/skills/` внутри нужного проекта. Для пользовательской установки скопируйте их в `~/.agents/skills/`.

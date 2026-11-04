@@ -1,5 +1,7 @@
 # Model routing and agent contracts
 
+Documentation filenames below name roles in the default project layout. Use the existing equivalent sections on resumed projects; these recording requirements do not call for new files or duplicate reports. See [documentation maintenance](documentation.md) for upkeep.
+
 Choose by required reasoning depth, risk, and verifiability, not by role name alone. This policy favors selective routing. It does not establish universal quality, speed, token, or subscription-savings guarantees. Use models actually exposed by the current runtime.
 
 ## Default routing

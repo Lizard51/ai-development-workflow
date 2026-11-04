@@ -30,7 +30,7 @@ After the user confirms shared understanding, continue through the authorized bu
 
 Read [references/workflow.md](references/workflow.md) before executing the build.
 
-Create the relevant project-local artifacts under `.codex/` from the templates in `assets/`:
+For a new project, keep the initial contract under `.codex/` using the templates in `assets/`:
 
 - `SPEC.md`: required behavior, constraints, exclusions, and acceptance criteria.
 - `PLAN.md`: architecture, sequence, risks, and affected areas.
@@ -38,7 +38,15 @@ Create the relevant project-local artifacts under `.codex/` from the templates i
 - `STATUS.md`: current phase, completed work, blockers, and verified commands.
 - `VALIDATION.md`: baseline, new failing tests, final commands, and evidence.
 
-Keep these files concise and update them when decisions or verified state change. Do not replace repository-native documentation that already serves the same purpose.
+For an existing project or resumed work, locate these roles in its current documentation first. Reuse repository-native files or sections that already serve the purpose; do not recreate the initial set for each feature, task, or chat.
+
+## Maintain documentation during development
+
+Before the first documentation update in ongoing work, read [references/documentation.md](references/documentation.md). Use the existing entry point and current state, then read only task-relevant requirements, code, and evidence; consult history when a specific question requires it.
+
+Update the existing authoritative section before considering a new file. Keep each detailed requirement in one place, with brief status and links elsewhere. Replace superseded wording and refresh affected state, tasks, or evidence only when their meaning changes. Current files describe the current project, not an accumulating diary of agent actions.
+
+Create an additional document only for a distinct, lasting purpose with no suitable existing home, and link it from existing navigation. Preserve unresolved questions, meaningful evidence, and user edits when consolidating. Do not reorganize the whole project's documentation as a side effect of ordinary development.
 
 ## Require tests before implementation
 

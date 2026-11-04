@@ -1,6 +1,8 @@
 # Delivery workflow
 
-Use this sequence for substantial builds. Compress or omit a phase only when it has no decision or validation value; record the reason in `STATUS.md`.
+Use this sequence for substantial builds. Compress or omit a phase only when it has no decision or validation value; record the reason in the existing task status (`STATUS.md` in the default layout).
+
+The initial `.codex/` layout remains the starting point for new projects. On existing or resumed projects, the filenames below denote document roles: use their established equivalents instead of creating parallel files. Read [documentation maintenance](documentation.md) before updating ongoing project records; reuse confirmed decisions rather than restarting the initial documentation phase.
 
 ## 1. Inspect and interview
 
@@ -11,11 +13,11 @@ Use this sequence for substantial builds. Compress or omit a phase only when it 
 
 ## 2. Specify
 
-Create `.codex/SPEC.md` from [the specification template](../assets/SPEC.template.md). Make acceptance criteria observable. Separate requirements, constraints, exclusions, assumptions, and unresolved questions.
+For a new project, create `.codex/SPEC.md` from [the specification template](../assets/SPEC.template.md). For ongoing work, update the relevant authoritative requirements section in place; link to it from task records instead of copying the full contract. Make acceptance criteria observable. Separate requirements, constraints, exclusions, assumptions, and unresolved questions.
 
 ## 3. Plan and graph tasks
 
-Create `.codex/PLAN.md` and `.codex/TASKS.md`. Identify dependencies before parallelizing. For each task record:
+For a new project, create `.codex/PLAN.md` and `.codex/TASKS.md`. On ongoing work, revise the existing plan and task graph for the affected scope; do not create a fresh plan or handoff for each iteration. Identify dependencies before parallelizing. For each task record:
 
 - objective and relevant acceptance criteria;
 - prerequisites;
@@ -46,6 +48,8 @@ Git is an optional isolation mechanism, not a required phase. When the repositor
 
 Before a non-Git editing task, preserve a lightweight before-state of its owned files and frozen acceptance tests, or an equivalent versioned change record. Use before/after comparison to verify scope and test immutability; do not create Git merely to obtain a diff. Coordinator writes in a shared workspace must be serialized with worker writes.
 
+Apply the same ownership and isolation rules to documentation. Assign one owner for shared records, normally the coordinator. Workers return findings in their result message unless a persistent document is an assigned deliverable; do not create competing shared plans or reports. Read the latest document before writing and preserve intervening user or agent edits.
+
 ## 6. Implement through red-green loops
 
 Each implementation worker:
@@ -68,12 +72,16 @@ The coordinator verifies each result independently:
 - independently verify oracle correctness and consistency of decision-relevant numbers, tables, and conclusions;
 - integrate in dependency order;
 - resolve conflicts deliberately rather than taking either side wholesale;
-- update `.codex/STATUS.md` after verified state changes.
+- update the affected current-state and task sections after verified state changes; keep detailed requirements and evidence in their own authoritative locations.
 
 When telemetry is available, record actual task usage and duration in `VALIDATION.md`; otherwise mark them unknown. Raw token counts, estimated credits, elapsed time, and subscription-limit use are different measures.
+
+Refresh the current task's validation summary and link necessary evidence rather than appending duplicate iteration reports. Preserve material baseline, red/green, oracle corrections, and acceptance evidence; label earlier results with their tested revision or scope when relevant. Past checks do not establish the current build's result.
 
 ## 8. Final validation
 
 Run the relevant full suite: tests, lint, typecheck, build, and any required browser or manual checks. Review the combined diff and reconcile every acceptance criterion and task.
+
+For documentation-only changes, use proportional checks of the diff, links, and consistency; run application checks only when the affected content or project rules make them relevant. Close out the affected documentation: replace obsolete statements, remove completed items from the active queue once their outcome is retained where needed, and leave unresolved work visible. Do not update unrelated documents or create a new summary file merely to record completion.
 
 All Git and GitHub operations are optional. Use local repositories, branches, commits, or worktrees only when the user requests them or the existing project workflow and authorized task make them useful. Push, pull-request, merge, or deployment actions always require an explicit user request.

@@ -1,5 +1,7 @@
 # Validation record
 
+<!-- Initial evidence template. During development, refresh the affected task's summary without duplicating iteration reports. Retain material baseline, red/green, oracle corrections, and acceptance evidence with its tested scope/revision and limitations. Automated checks and real-use acceptance are distinct; old results do not verify a changed build. -->
+
 ## Discovered commands
 
 ## Baseline before changes

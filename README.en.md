@@ -16,7 +16,8 @@ Discover → Specify → Plan → Verify failing acceptance tests
 ## What it does
 
 - Inspects the project and interviews you about unresolved decisions before implementation.
-- Records the contract in five short files under `.codex/`: `SPEC.md`, `PLAN.md`, `TASKS.md`, `STATUS.md`, and `VALIDATION.md`.
+- Starts new projects with five contract files under `.codex/`: `SPEC.md`, `PLAN.md`, `TASKS.md`, `STATUS.md`, and `VALIDATION.md`.
+- During ongoing work, updates established documents in place, keeps detailed requirements in one authoritative section, and avoids duplicate plans, handoffs, and iteration reports. See [documentation maintenance](skills/ai-development-workflow/references/documentation.md).
 - Requires new tests to fail for the expected reason before implementing new behavior, with independently reviewed expectations.
 - Delegates only useful independent work, with explicit model profiles and isolated parallel edits.
 - Makes the coordinator inspect changes, rerun checks, and reconcile acceptance criteria.
@@ -50,6 +51,8 @@ If the skills do not appear, restart Codex. See [manual and project-local instal
 | [`ai-development-workflow`](skills/ai-development-workflow/SKILL.md) | Delivery process, routing policy, document templates | Lizard51 |
 | [`grilling`](skills/grilling/SKILL.md) | Required requirements interview | Matt Pocock |
 | [`domain-modeling`](skills/domain-modeling/SKILL.md) | Conditional domain glossary and ADR guidance | Matt Pocock |
+
+Current release: [v1.1.0](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.1.0). The previous [v1.0.0](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.0.0) remains available as a separate snapshot.
 
 ## Runtime requirements
 

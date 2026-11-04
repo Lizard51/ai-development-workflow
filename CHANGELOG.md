@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.1.0 — 2026-11-04
+
+Documentation maintenance during ongoing development.
+
+- Reuse existing project documents and update authoritative sections before creating new files.
+- Keep detailed requirements in one place; use short status entries and links instead of duplicate contracts.
+- Replace superseded wording, keep the active queue current, and retain unresolved issues and material evidence.
+- Resume through current state and task-relevant sources; consult history only when needed.
+- Give shared documents one owner and avoid permanent reports for every agent result.
+- Preserve the initial five-document structure, all template sections, the interview, test-first implementation, model routing, and integration rules.
+- Add the maintenance reference to package validation and document both current and previous release tags.
+
+The v1.0.0 tag and release remain unchanged. Instruction scenarios were reviewed; token savings and long-running project behavior have not been measured.
+
 ## 1.0.0 — 2026-10-28
 
 First public distribution of the existing AI Development Workflow skill.

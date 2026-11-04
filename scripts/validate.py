@@ -17,6 +17,7 @@ REQUIRED = (
     "CONTRIBUTING.md", "CHANGELOG.md", "docs/installation.md",
     "docs/examples.md", "docs/validation.md", ".github/workflows/validate.yml",
     "skills/ai-development-workflow/references/workflow.md",
+    "skills/ai-development-workflow/references/documentation.md",
     "skills/ai-development-workflow/references/model-routing.md",
     "skills/domain-modeling/ADR-FORMAT.md",
     "skills/domain-modeling/CONTEXT-FORMAT.md",
