@@ -42,7 +42,7 @@ For concurrency and atomicity requirements, have the coordinator, preferably the
 
 Delegate only independent tasks. A useful delegation costs less to describe and review than to perform directly. Read-only work can run in parallel without Git. Parallel editing requires non-overlapping file ownership plus distinct writable workspaces.
 
-Use Luna Medium for narrow verifiable tasks and Sol Medium for standard implementation and substantive tests. Keep specification, critical decisions, and integration with the coordinator. Do not create an agent for every task merely to follow the routing table; record justified escalations and fallbacks.
+Use Luna Medium for narrow verifiable tasks, Terra Medium for ordinary bounded implementation, and Sol Medium directly for difficult implementation, substantive analysis, and test design. The coordinator assigns the initial profile, reviews outcomes, and decides whether a bounded correction or escalation is warranted. Keep specification, critical decisions, and integration with the coordinator. Do not create an agent for every task or a standby worker for every profile; record justified escalations and fallbacks under the routing policy.
 
 Git is an optional isolation mechanism, not a required phase. When the repository uses Git and the task enables Git isolation, distinct worktrees are preferred for parallel editors; a branch in the same checkout is not isolation. When Git is unavailable or not enabled, keep editing sequential unless another safe isolated workspace mechanism already exists. Do not create repositories, branches, commits, worktrees, or remote operations merely for ceremony.
 

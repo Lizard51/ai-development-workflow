@@ -9,9 +9,9 @@ Apply an adaptive, test-first delivery workflow. Preserve the user's requested p
 
 ## Execution profile
 
-The recommended coordinator is `gpt-6.1-sol` with `high` reasoning, selected by the user before starting. Keep the current coordinator model; a skill does not change the chat's model or enable unavailable tools.
+The recommended coordinator is `gpt-6.2-sol` with `high` reasoning, selected by the user before starting. Keep the current coordinator model; a skill does not change the chat's model or enable unavailable tools.
 
-Use `gpt-6-luna` / `medium` for narrow, independently checkable work and `gpt-6.1-sol` / `medium` for substantial implementation, tests, and analysis. Keep critical decisions and final acceptance with the coordinator; use a separate Sol High reviewer only when independent review is worth its overhead. Read [references/model-routing.md](references/model-routing.md) before the first delegation, including read-only interview fact-finding.
+Use `gpt-6-luna` / `medium` for narrow, independently checkable work, `gpt-6.1-terra` / `medium` for ordinary bounded implementation, and `gpt-6.2-sol` / `medium` for difficult implementation, substantive tests, and analysis. The coordinator chooses the initial profile and reviews any escalation; known difficult work can go directly to Sol Medium. Keep critical decisions and final acceptance with the coordinator; use a separate Sol High reviewer only when independent review is worth its overhead. Read [references/model-routing.md](references/model-routing.md) before the first delegation, including read-only interview fact-finding.
 
 Check that the runtime exposes delegation and model/effort selection. Select both explicitly rather than letting workers inherit the coordinator's High profile. If those capabilities or a requested model are unavailable, disclose the limitation and use the routing reference's fallback; do not pretend that differentiated agents ran or modify global settings automatically.
 
@@ -66,11 +66,11 @@ This skill explicitly authorizes subagents when independent workstreams would ma
 
 - Keep dependent, tiny, or tightly coupled work with the coordinator.
 - Use at most three active workers and never exceed the runtime's available worker capacity. Wider parallelism requires both an explicit user request and runtime support.
-- Assign the lightest profile that meets the task's reasoning and verification needs, with an explicit model and reasoning effort. Do not force difficult work through Luna first or treat fewer raw tokens as proof of lower cost.
+- Assign the lightest profile that meets the task's reasoning and verification needs, with an explicit model and reasoning effort. Do not force difficult work through Luna or Terra first, create standby workers for every profile, or treat fewer raw tokens as proof of lower cost.
 - Give each worker a bounded task, necessary context, permitted files, immutable tests, validation commands, and a required result format.
 - Parallel editing workers must have non-overlapping ownership and isolated writable workspaces. Git is optional: use distinct Git worktrees only when the repository uses Git and Git isolation is enabled for the task. Without safe isolation, keep code editing sequential; serialize coordinator edits with worker edits in the same workspace. Read-only workers may still run in parallel.
 - Never let multiple workers edit the same checkout or the same files concurrently.
-- Escalate a failed task only after reviewing the evidence: Luna Medium to Sol Medium, then to the coordinator / Sol High. Terra is an optional disclosed fallback, not a required stage.
+- The coordinator reviews failures before changing profiles. A simple local Terra defect may get one bounded correction; persistent or substantive defects go to Sol Medium, with critical decisions kept by the coordinator / Sol High. A failed check alone does not prove that a stronger model is needed; follow the routing reference.
 
 ## Integrate and verify
 

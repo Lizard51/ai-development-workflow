@@ -36,6 +36,12 @@ behavior. Verify empty input, Unicode, quotes, and embedded newlines.
 
 Expected: inspect first, resolve actual decisions, record the contract, verify failing acceptance tests, implement, and validate the affected flow. Preserve unrelated user changes.
 
+## Как выбирается исполнитель / How the coordinator picks a worker
+
+В примере с CSV координатор может поручить Luna Medium найти текущие тесты, а Terra Medium — реализовать согласованные правила экспорта. Если экспорт требует согласованного снимка данных во время параллельных изменений, Sol Medium можно сразу поручить проектирование проверок и реализацию этой части. Если обычный экспорт не проходит тест, координатор сначала сверяет ожидаемый результат с требованиями и решает, достаточно ли локальной доработки.
+
+For the CSV example, Luna Medium can locate the existing tests and Terra Medium can implement the agreed export behavior. If the export must read a consistent snapshot while data changes concurrently, the coordinator can assign the test design and implementation for that part directly to Sol Medium. If a routine export test fails, the coordinator checks the expected result against the requirements before deciding whether a local correction is enough.
+
 ## Среда без субагентов / Without delegation
 
 ```text

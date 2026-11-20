@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.0 — 2026-11-20
+
+Model routing for routine and difficult development work.
+
+- Recommend GPT-6.2 Sol High for the coordinator and keep the model selected for the chat.
+- Use GPT-6 Luna Medium for narrow, independently checkable tasks and GPT-6.1 Terra Medium for routine implementation with clear requirements.
+- Assign difficult work and substantive test design directly to GPT-6.2 Sol Medium when needed. The coordinator diagnoses failed checks before escalating and can allow one bounded correction for a local Terra defect.
+- Pass existing changes and reproducible failures to the next worker. Keep the existing worker limit and test-first acceptance process.
+- Update both READMEs, the installation guide, and the routing example.
+
 ## 1.1.0 — 2026-11-04
 
 Documentation maintenance during ongoing development.

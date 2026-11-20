@@ -13,16 +13,16 @@ skills/domain-modeling. If a skill already exists, preserve it and explain
 the version conflict instead of overwriting it.
 ```
 
-Для воспроизводимой версии попросите использовать тег `v1.1.0`. Ветка `main` может меняться. / Request tag `v1.1.0` for a fixed snapshot; `main` may change.
+Для воспроизводимой установки укажите тег `v1.2.0`. / Use tag `v1.2.0` to install a fixed version.
 
-Предыдущая версия остаётся доступна по тегу [`v1.0.0`](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.0.0). Для её установки явно укажите этот тег. / The previous version is preserved at tag `v1.0.0`; request that tag explicitly to install it.
+Предыдущие версии доступны на [странице релизов](https://github.com/Lizard51/ai-development-workflow/releases). / Earlier versions are available on the [releases page](https://github.com/Lizard51/ai-development-workflow/releases).
 
 ## Вручную / Manual installation
 
 Скачайте исходники со [страницы релизов](https://github.com/Lizard51/ai-development-workflow/releases) либо клонируйте:
 
 ```sh
-git clone --branch v1.1.0 --depth 1 https://github.com/Lizard51/ai-development-workflow.git
+git clone --branch v1.2.0 --depth 1 https://github.com/Lizard51/ai-development-workflow.git
 ```
 
 Для одного проекта скопируйте три папки из `skills/` в `.agents/skills/` внутри нужного проекта. Для пользовательской установки скопируйте их в `~/.agents/skills/`.
@@ -45,6 +45,12 @@ For one project, copy the three folders under `skills/` into that project's `.ag
 Не копируйте только `SKILL.md`: относительные ссылки требуют остальных файлов. Не заменяйте существующие скиллы без сравнения. Если используете встроенный установщик, путь выбирает он; не создавайте вторую копию того же скилла вручную.
 
 Copy each complete skill folder, not just its entrypoint. Compare existing installations before replacing them. When using the built-in installer, keep its chosen installation location and avoid duplicate copies.
+
+## Обновление с v1.1.0 / Upgrading from v1.1.0
+
+Сравните `skills/ai-development-workflow/` из нового тега с установленным навыком. Сохраните копию и перенесите изменения в исходное место установки. Обновление затрагивает основной навык. Если `grilling` и `domain-modeling` уже установлены из v1.1.0, их можно оставить.
+
+Compare `skills/ai-development-workflow/` from the new tag with your installed copy. Save a backup and apply the changes in the original installation directory. Existing `grilling` and `domain-modeling` copies from v1.1.0 can stay in place.
 
 ## Проверка / Check
 

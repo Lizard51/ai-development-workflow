@@ -31,10 +31,10 @@ Ask Codex:
 
 ```text
 $skill-installer Install skills/ai-development-workflow, skills/grilling,
-and skills/domain-modeling from Lizard51/ai-development-workflow.
+and skills/domain-modeling from Lizard51/ai-development-workflow at tag v1.2.0.
 ```
 
-Then start a task:
+Select GPT-6.2 Sol with High reasoning for coordination if available, then start a task:
 
 ```text
 $ai-development-workflow
@@ -52,11 +52,20 @@ If the skills do not appear, restart Codex. See [manual and project-local instal
 | [`grilling`](skills/grilling/SKILL.md) | Required requirements interview | Matt Pocock |
 | [`domain-modeling`](skills/domain-modeling/SKILL.md) | Conditional domain glossary and ADR guidance | Matt Pocock |
 
-Current release: [v1.1.0](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.1.0). The previous [v1.0.0](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.0.0) remains available as a separate snapshot.
+Current release: [v1.2.0](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.2.0). [All releases](https://github.com/Lizard51/ai-development-workflow/releases).
 
-## Runtime requirements
+## Model profiles and runtime requirements
 
-The bundled routing recommends `gpt-6.1-sol` / `high` as coordinator, `gpt-6-luna` / `medium` for narrow work, and `gpt-6.1-sol` / `medium` for substantive implementation. These are skill preferences, not availability guarantees. The current coordinator is preserved. Unsupported profiles or delegation capabilities must be disclosed; coordinator-only work is a supported fallback. See [model routing](skills/ai-development-workflow/references/model-routing.md).
+| Model | Effort | When to choose it |
+| --- | --- | --- |
+| GPT-6.2 Sol | High | Coordination, architecture decisions, and final acceptance |
+| GPT-6 Luna | Medium | Fact-finding and small edits with straightforward checks |
+| GPT-6.1 Terra | Medium | Routine implementation with clear requirements and independent checks |
+| GPT-6.2 Sol | Medium | Difficult implementation, test design, and escalation |
+
+The coordinator can assign difficult work directly to Sol Medium. When Terra's work fails a check, the coordinator diagnoses the cause first. A local defect can get one bounded correction. A substantial or recurring defect can go to Sol Medium with the existing changes and check results.
+
+Codex keeps the model selected for the chat. Subagent profiles depend on what the host supports. If a requested profile is unavailable, the coordinator discloses the substitute or works directly. See [the full routing policy](skills/ai-development-workflow/references/model-routing.md).
 
 This is an instruction bundle. It does not provide an agent runtime, unlock tools, change global settings, or guarantee quality or cost savings. Package checks do not prove end-to-end delivery behavior. See [validation scope](docs/validation.md).
 
