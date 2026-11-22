@@ -36,6 +36,12 @@ behavior. Verify empty input, Unicode, quotes, and embedded newlines.
 
 Expected: inspect first, resolve actual decisions, record the contract, verify failing acceptance tests, implement, and validate the affected flow. Preserve unrelated user changes.
 
+## Проверка результата и замены / Checking outcomes and replacements
+
+Если CSV предназначен для конкретной программы, проверка должна дойти до открытия файла в ней, а не только подтвердить создание файла. При замене старого экспорта проверьте затронутые вызовы, тесты, ссылки и инструкции; изменённую документированную команду выполните в указанном виде или объясните препятствие. Сохраняйте исторические материалы с пометкой об их статусе. Добавляйте проверку отказа или конфликта, если возможна потеря данных или блокировка работы; для небольшой правки достаточно узкой проверки её поведения.
+
+If the CSV is intended for a particular application, verify that it opens there, not merely that a file was created. When replacing the old export, reconcile affected callers, tests, links, and instructions; run a changed documented command exactly as shown or explain what prevented it. Retain historical material with its status clearly marked. Check a failure or conflict when data loss or blocked work is possible; a small edit needs only a focused check of its behavior.
+
 ## Как выбирается исполнитель / How the coordinator picks a worker
 
 В примере с CSV координатор может поручить Luna Medium найти текущие тесты, а Terra Medium — реализовать согласованные правила экспорта. Если экспорт требует согласованного снимка данных во время параллельных изменений, Sol Medium можно сразу поручить проектирование проверок и реализацию этой части. Если обычный экспорт не проходит тест, координатор сначала сверяет ожидаемый результат с требованиями и решает, достаточно ли локальной доработки.

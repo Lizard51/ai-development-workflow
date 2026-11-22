@@ -34,7 +34,7 @@ For a new project, create `.codex/PLAN.md` and `.codex/TASKS.md`. On ongoing wor
 4. Check expected results against the specification independently of the implementation, then run tests before implementation and verify that the new assertions fail for the intended reason.
 5. Keep old green tests green and new acceptance tests immutable to implementation workers.
 
-Tests should express behavior, not mirror private implementation details. A test that passes before the behavior exists does not establish the requested red-green contract; fix or replace it.
+Tests should express behavior, not mirror private implementation details. For substantial changes, choose a check that reaches the user-promised outcome: for example, saved data after reopening, a converted file working in its consuming application, or loading that reaches a usable screen or allows retry. Add a failure or conflict check when data loss or blocked work is possible. These examples guide selection, not a mandatory checklist; a small edit needs only a focused check of affected behavior. A test that passes before the behavior exists does not establish the requested red-green contract; fix or replace it.
 
 For concurrency and atomicity requirements, have the coordinator, preferably the recommended High profile, review the oracle, fault point, recovery outcome, and deterministic schedule. Preserve and disclose the actual profile. Do not put a mandatory two-request barrier inside a section that a correct implementation serializes.
 
@@ -81,6 +81,8 @@ Refresh the current task's validation summary and link necessary evidence rather
 ## 8. Final validation
 
 Run the relevant full suite: tests, lint, typecheck, build, and any required browser or manual checks. Review the combined diff and reconcile every acceptance criterion and task.
+
+When replacing or removing existing functionality, reconcile affected active callers, tests, links, and instructions. If a documented command changes, run it exactly as documented or report what prevented it. Preserve historical material with a clear status label.
 
 For documentation-only changes, use proportional checks of the diff, links, and consistency; run application checks only when the affected content or project rules make them relevant. Close out the affected documentation: replace obsolete statements, remove completed items from the active queue once their outcome is retained where needed, and leave unresolved work visible. Do not update unrelated documents or create a new summary file merely to record completion.
 

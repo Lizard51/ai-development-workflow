@@ -13,7 +13,7 @@ skills/domain-modeling. If a skill already exists, preserve it and explain
 the version conflict instead of overwriting it.
 ```
 
-Для воспроизводимой установки укажите тег `v1.2.0`. / Use tag `v1.2.0` to install a fixed version.
+Для воспроизводимой установки укажите тег `v1.2.1`. / Use tag `v1.2.1` to install a fixed version.
 
 Предыдущие версии доступны на [странице релизов](https://github.com/Lizard51/ai-development-workflow/releases). / Earlier versions are available on the [releases page](https://github.com/Lizard51/ai-development-workflow/releases).
 
@@ -22,7 +22,7 @@ the version conflict instead of overwriting it.
 Скачайте исходники со [страницы релизов](https://github.com/Lizard51/ai-development-workflow/releases) либо клонируйте:
 
 ```sh
-git clone --branch v1.2.0 --depth 1 https://github.com/Lizard51/ai-development-workflow.git
+git clone --branch v1.2.1 --depth 1 https://github.com/Lizard51/ai-development-workflow.git
 ```
 
 Для одного проекта скопируйте три папки из `skills/` в `.agents/skills/` внутри нужного проекта. Для пользовательской установки скопируйте их в `~/.agents/skills/`.
@@ -46,11 +46,15 @@ For one project, copy the three folders under `skills/` into that project's `.ag
 
 Copy each complete skill folder, not just its entrypoint. Compare existing installations before replacing them. When using the built-in installer, keep its chosen installation location and avoid duplicate copies.
 
-## Обновление с v1.1.0 / Upgrading from v1.1.0
+## Обновление / Upgrading
 
 Сравните `skills/ai-development-workflow/` из нового тега с установленным навыком. Сохраните копию и перенесите изменения в исходное место установки. Обновление затрагивает основной навык. Если `grilling` и `domain-modeling` уже установлены из v1.1.0, их можно оставить.
 
 Compare `skills/ai-development-workflow/` from the new tag with your installed copy. Save a backup and apply the changes in the original installation directory. Existing `grilling` and `domain-modeling` copies from v1.1.0 can stay in place.
+
+При обновлении с v1.2.0 изменился только `references/workflow.md` основного навыка. Остальные файлы навыков, модели и шаблоны остаются прежними; документация пакета описывает обновление.
+
+When upgrading from v1.2.0, only the main skill's `references/workflow.md` has changed. Other skill files, model profiles, and templates are unchanged; the package documentation describes the update.
 
 ## Проверка / Check
 

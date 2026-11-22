@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.1 — 2026-11-22
+
+Outcome-focused validation and complete replacement/removal of existing behavior.
+
+- Choose checks before implementation that reach the user-promised outcome, such as persisted data after reopening or a converted file working in its consuming application.
+- Include a failure or conflict check when data loss or blocked work is possible. Examples guide selection rather than impose a fixed checklist; small edits need only focused checks.
+- Reconcile affected active callers, tests, links, and instructions when replacing or removing functionality. Run changed documented commands exactly as documented or disclose the obstacle; retain historical material with a clear status label.
+- Preserve model routing, workflow phases, document templates, and optional Git. No graph integration is added.
+- Refresh Russian and English release descriptions, installation guidance, and an illustrative acceptance example. Package checks do not establish end-to-end application behavior.
+
 ## 1.2.0 — 2026-11-20
 
 Model routing for routine and difficult development work.

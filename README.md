@@ -32,7 +32,7 @@
 
 ```text
 $skill-installer Установи из репозитория Lizard51/ai-development-workflow
-по тегу v1.2.0 скиллы skills/ai-development-workflow, skills/grilling и skills/domain-modeling.
+по тегу v1.2.1 скиллы skills/ai-development-workflow, skills/grilling и skills/domain-modeling.
 ```
 
 Выберите GPT-6.2 Sol с усилием High для координации, если этот профиль доступен, и начните задачу:
@@ -63,7 +63,9 @@ $ai-development-workflow
 
 В дальнейшей работе агент обновляет существующие разделы: подробное требование хранится в одном месте, статусы и задачи ссылаются на него. Устаревшие формулировки заменяются; новые планы, handoff и отчёты не создаются для каждого чата. История читается по необходимости. См. [правила сопровождения документации](skills/ai-development-workflow/references/documentation.md).
 
-Текущий релиз — [v1.2.0](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.2.0). [Все версии](https://github.com/Lizard51/ai-development-workflow/releases).
+Текущий релиз — [v1.2.1](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.2.1). [Все версии](https://github.com/Lizard51/ai-development-workflow/releases).
+
+В v1.2.1 уточнена проверка обещанного пользователю результата и завершение замены или удаления функций. Проверки соразмерны задаче; модели, этапы и шаблоны не изменились. [Подробнее в журнале изменений](CHANGELOG.md#121--2026-11-22).
 
 ## Модели и ограничения
 

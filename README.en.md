@@ -31,7 +31,7 @@ Ask Codex:
 
 ```text
 $skill-installer Install skills/ai-development-workflow, skills/grilling,
-and skills/domain-modeling from Lizard51/ai-development-workflow at tag v1.2.0.
+and skills/domain-modeling from Lizard51/ai-development-workflow at tag v1.2.1.
 ```
 
 Select GPT-6.2 Sol with High reasoning for coordination if available, then start a task:
@@ -52,7 +52,9 @@ If the skills do not appear, restart Codex. See [manual and project-local instal
 | [`grilling`](skills/grilling/SKILL.md) | Required requirements interview | Matt Pocock |
 | [`domain-modeling`](skills/domain-modeling/SKILL.md) | Conditional domain glossary and ADR guidance | Matt Pocock |
 
-Current release: [v1.2.0](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.2.0). [All releases](https://github.com/Lizard51/ai-development-workflow/releases).
+Current release: [v1.2.1](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.2.1). [All releases](https://github.com/Lizard51/ai-development-workflow/releases).
+
+Version 1.2.1 clarifies how to verify the user-promised outcome and finish replacing or removing existing functionality. Checks remain proportional to the task; model routing, phases, and templates are unchanged. See the [changelog](CHANGELOG.md#121--2026-11-22).
 
 ## Model profiles and runtime requirements
 
