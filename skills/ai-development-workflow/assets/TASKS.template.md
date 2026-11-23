@@ -1,6 +1,6 @@
 # Task graph
 
-<!-- Initial task template. During development, maintain the existing graph and link objectives to their requirements. Keep actionable and unresolved work visible; remove completed items from the active queue once necessary outcomes/evidence are retained. Shared records have one designated owner. -->
+<!-- Track dependencies, ownership, and validation for actionable work. Link requirements and results. -->
 
 | ID | Objective | Depends on | Owner | Requested model | Effort | Actual profile/fallback | Workspace/isolation | Files/scope | Validation | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

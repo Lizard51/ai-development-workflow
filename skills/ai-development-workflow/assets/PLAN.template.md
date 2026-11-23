@@ -1,6 +1,6 @@
 # Implementation plan
 
-<!-- Initial plan template. During development, revise the affected approach and remaining sequence in this plan; do not create another plan per iteration. Reference authoritative requirements and task/evidence records instead of duplicating their details. -->
+<!-- Record the approach and remaining sequence. Link requirements and evidence where relevant. -->
 
 ## Current system
 

@@ -16,7 +16,7 @@ Discover → Specify → Plan → Verify failing acceptance tests
 ## What it does
 
 - Inspects the project and interviews you about unresolved decisions before implementation.
-- Starts new projects with five contract files under `.codex/`: `SPEC.md`, `PLAN.md`, `TASKS.md`, `STATUS.md`, and `VALIDATION.md`.
+- Uses as many project documents as needed. Requirements, plan, tasks, status, and evidence may share one file, including in a new project. Each role has an [optional template](skills/ai-development-workflow/assets/).
 - During ongoing work, updates established documents in place, keeps detailed requirements in one authoritative section, and avoids duplicate plans, handoffs, and iteration reports. See [documentation maintenance](skills/ai-development-workflow/references/documentation.md).
 - Requires new tests to fail for the expected reason before implementing new behavior, with independently reviewed expectations.
 - Delegates only useful independent work, with explicit model profiles and isolated parallel edits.
@@ -31,7 +31,7 @@ Ask Codex:
 
 ```text
 $skill-installer Install skills/ai-development-workflow, skills/grilling,
-and skills/domain-modeling from Lizard51/ai-development-workflow at tag v1.2.1.
+and skills/domain-modeling from Lizard51/ai-development-workflow at tag v1.3.0.
 ```
 
 Select GPT-6.2 Sol with High reasoning for coordination if available, then start a task:
@@ -52,9 +52,9 @@ If the skills do not appear, restart Codex. See [manual and project-local instal
 | [`grilling`](skills/grilling/SKILL.md) | Required requirements interview | Matt Pocock |
 | [`domain-modeling`](skills/domain-modeling/SKILL.md) | Conditional domain glossary and ADR guidance | Matt Pocock |
 
-Current release: [v1.2.1](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.2.1). [All releases](https://github.com/Lizard51/ai-development-workflow/releases).
+Current release: [v1.3.0](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.3.0). [All releases](https://github.com/Lizard51/ai-development-workflow/releases).
 
-Version 1.2.1 clarifies how to verify the user-promised outcome and finish replacing or removing existing functionality. Checks remain proportional to the task; model routing, phases, and templates are unchanged. See the [changelog](CHANGELOG.md#121--2026-11-22).
+Version 1.3.0 shortens the core instructions and lets agents read details at the relevant stage. The coordinator looks up quick facts during interviews and delegates research when it helps. See the [changelog](CHANGELOG.md#130--2026-11-23).
 
 ## Model profiles and runtime requirements
 

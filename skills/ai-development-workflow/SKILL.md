@@ -5,82 +5,21 @@ description: Turn a substantial software idea or complex feature into a specifie
 
 # AI Development Workflow
 
-Apply an adaptive, test-first delivery workflow. Preserve the user's requested product and authorization boundaries; this skill does not authorize publishing, pushing, opening pull requests, merging, deploying, or other external writes.
+The coordinator owns requirements, critical decisions, integration, and final acceptance. Recommend GPT-6.2 Sol High before starting and keep the model the user selected. Git is optional. Pushes, pull requests, merges, deployments, and other external writes require explicit user authorization.
 
-## Execution profile
+## Discover and confirm
 
-The recommended coordinator is `gpt-6.2-sol` with `high` reasoning, selected by the user before starting. Keep the current coordinator model; a skill does not change the chat's model or enable unavailable tools.
+Inspect project instructions, current state, and relevant code before asking the user. Use `$grilling` for new products, large features, and materially ambiguous work. Its decision rounds cover unresolved product choices and material trade-offs that need the user. Resolve routine implementation choices from the repository and confirmed requirements. Wait for confirmation of shared understanding before implementing. Explicit confirmation in the last round counts. Reuse confirmed decisions on resumed work and reopen the interview for newly ambiguous requirements. Use `$domain-modeling` when unclear domain terms or a consequential domain trade-off need it.
 
-Use `gpt-6-luna` / `medium` for narrow, independently checkable work, `gpt-6.1-terra` / `medium` for ordinary bounded implementation, and `gpt-6.2-sol` / `medium` for difficult implementation, substantive tests, and analysis. The coordinator chooses the initial profile and reviews any escalation; known difficult work can go directly to Sol Medium. Keep critical decisions and final acceptance with the coordinator; use a separate Sol High reviewer only when independent review is worth its overhead. Read [references/model-routing.md](references/model-routing.md) before the first delegation, including read-only interview fact-finding.
+When composing this workflow with `$grilling`, use this fact-finding rule in place of its default dispatch rule. Look up quick facts directly. Delegate a bounded read-only investigation if it can resolve an independent prerequisite while other questions move forward, or if delegation materially improves the result. Use the [routing policy](references/model-routing.md) before assigning an agent, including during the interview.
 
-Check that the runtime exposes delegation and model/effort selection. Select both explicitly rather than letting workers inherit the coordinator's High profile. If those capabilities or a requested model are unavailable, disclose the limitation and use the routing reference's fallback; do not pretend that differentiated agents ran or modify global settings automatically.
+## Plan and deliver
 
-## Start with discovery
+After confirmation continue the authorized work through acceptance. Ask again for unresolved user decisions, material scope changes, permissions, or external actions.
 
-1. Inspect the repository and existing project instructions for facts that can be learned without asking the user.
-2. Load and follow `$grilling` for unresolved product and design decisions. This skill explicitly requires the interview for a new product, a large feature, or materially ambiguous work.
-3. Do not implement during the interview. Continue until the decision frontier is empty and the user confirms shared understanding.
-4. For a mature domain with ambiguous terminology or consequential architectural trade-offs, also load `$domain-modeling`; otherwise keep domain glossary and ADR work out of the critical path.
+1. Capture requirements, plan, task ownership, current state, and evidence where they fit. Read [documentation maintenance](references/documentation.md) when choosing or updating records. The five templates are available for these roles. Combine roles in one file or use existing sections when that covers the work.
+2. Follow [the delivery workflow](references/workflow.md) to plan and build. For new behavior, establish the baseline and independently check that acceptance tests fail for the intended reason before implementation. Keep agreed tests fixed during implementation. Use a repeatable alternative when an executable test is unsuitable.
+3. Delegate independent work selectively when its benefit exceeds the briefing and review cost. Use the [routing policy](references/model-routing.md) for assignments, isolation, or escalation. Keep tiny and tightly coupled edits with the coordinator.
+4. Independently review worker results, integrate in dependency order, and verify the affected behavior against the confirmed contract. Apply the delivery workflow's final checks to user-visible outcomes and replacements or removals.
 
-During the `$grilling` interview, its environmental fact-finding rule takes priority over the later delegation cost heuristic: if a frontier decision needs a repository fact that was not found during initial inspection, use a Luna Medium read-only subagent and continue with the rest of the available frontier. Interview lookups also obey the routing reference's capability/profile fallback: if delegation or the requested profile cannot be selected, disclose the limitation and inspect directly or use a justified supported profile. Outside the interview, apply the normal delegation threshold below.
-
-After the user confirms shared understanding, continue through the authorized build without requesting approval for each routine phase. Ask again only for unresolved decisions, material scope changes, missing permissions, or external actions. On resumed work, reuse confirmed decisions and project artifacts; reopen the interview only for newly ambiguous requirements.
-
-## Establish the contract
-
-Read [references/workflow.md](references/workflow.md) before executing the build.
-
-For a new project, keep the initial contract under `.codex/` using the templates in `assets/`:
-
-- `SPEC.md`: required behavior, constraints, exclusions, and acceptance criteria.
-- `PLAN.md`: architecture, sequence, risks, and affected areas.
-- `TASKS.md`: dependency graph, ownership, model assignment, optional isolation, and validation per task.
-- `STATUS.md`: current phase, completed work, blockers, and verified commands.
-- `VALIDATION.md`: baseline, new failing tests, final commands, and evidence.
-
-For an existing project or resumed work, locate these roles in its current documentation first. Reuse repository-native files or sections that already serve the purpose; do not recreate the initial set for each feature, task, or chat.
-
-## Maintain documentation during development
-
-Before the first documentation update in ongoing work, read [references/documentation.md](references/documentation.md). Use the existing entry point and current state, then read only task-relevant requirements, code, and evidence; consult history when a specific question requires it.
-
-Update the existing authoritative section before considering a new file. Keep each detailed requirement in one place, with brief status and links elsewhere. Replace superseded wording and refresh affected state, tasks, or evidence only when their meaning changes. Current files describe the current project, not an accumulating diary of agent actions.
-
-Create an additional document only for a distinct, lasting purpose with no suitable existing home, and link it from existing navigation. Preserve unresolved questions, meaningful evidence, and user edits when consolidating. Do not reorganize the whole project's documentation as a side effect of ordinary development.
-
-## Require tests before implementation
-
-Before changing production code for new behavior:
-
-1. Discover the project's real test, lint, typecheck, and build commands.
-2. Run the existing validation baseline and record pre-existing failures separately. For an empty project, record that no suite exists and bootstrap only the minimal test/build harness after requirements confirmation; do not implement the target behavior during setup.
-3. Add executable tests for the new acceptance criteria where feasible.
-4. Independently check test expectations against the specification, then run the new tests and confirm that they fail for the expected missing behavior, not because the test or its expected result is broken.
-5. Freeze the agreed acceptance tests. Implementation workers may not weaken, delete, skip, or rewrite them merely to obtain a green result.
-
-When an executable automated test is genuinely unsuitable, define the strongest repeatable alternative before implementation, such as a build assertion, browser flow, screenshot comparison, or explicit manual verification. Document the reason instead of creating a meaningless test.
-
-## Delegate selectively
-
-This skill explicitly authorizes subagents when independent workstreams would materially improve speed or quality. Read [references/model-routing.md](references/model-routing.md) before spawning them.
-
-- Keep dependent, tiny, or tightly coupled work with the coordinator.
-- Use at most three active workers and never exceed the runtime's available worker capacity. Wider parallelism requires both an explicit user request and runtime support.
-- Assign the lightest profile that meets the task's reasoning and verification needs, with an explicit model and reasoning effort. Do not force difficult work through Luna or Terra first, create standby workers for every profile, or treat fewer raw tokens as proof of lower cost.
-- Give each worker a bounded task, necessary context, permitted files, immutable tests, validation commands, and a required result format.
-- Parallel editing workers must have non-overlapping ownership and isolated writable workspaces. Git is optional: use distinct Git worktrees only when the repository uses Git and Git isolation is enabled for the task. Without safe isolation, keep code editing sequential; serialize coordinator edits with worker edits in the same workspace. Read-only workers may still run in parallel.
-- Never let multiple workers edit the same checkout or the same files concurrently.
-- The coordinator reviews failures before changing profiles. A simple local Terra defect may get one bounded correction; persistent or substantive defects go to Sol Medium, with critical decisions kept by the coordinator / Sol High. A failed check alone does not prove that a stronger model is needed; follow the routing reference.
-
-## Integrate and verify
-
-Treat worker claims as untrusted until verified. The coordinator must inspect each change using a Git diff or a preserved before/after file comparison, run the assigned checks, reject scope drift or weakened tests, and integrate in dependency order. Verify test oracles as well as code: a failing assertion may have an incorrect expectation. Recompute decision-relevant numbers and ensure tables and conclusions agree. For concurrency tests, check that the synchronization cannot deadlock a correct implementation. After integration, run the complete relevant validation suite and compare the result with `SPEC.md`, `PLAN.md`, and unfinished tasks.
-
-Report:
-
-- what was implemented;
-- which checks ran and their exact outcomes;
-- any pre-existing failures or unverified areas;
-- remaining work or deviations from the specification.
-
-Do not call the work complete while checks for the requested or affected behavior are failing or required evidence is missing. A verified pre-existing failure outside the task scope may remain only when it is unchanged, clearly disclosed, and does not prevent validating the requested work.
+Report the delivered result, checks and outcomes, material failures or unverified areas, and any remaining work. Close the task when the required evidence supports acceptance. Unchanged pre-existing failures may remain if disclosed and they do not prevent verifying the requested behavior.

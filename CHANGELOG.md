@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.3.0 — 2026-11-23
+
+Shorten the workflow instructions and make project documentation proportional to the work.
+
+- Keep the main skill focused on decisions and checkpoints. Put delivery, delegation, and documentation details in their respective references.
+- Allow one combined project record or several files in both new and existing projects. Keep all five template roles available.
+- Look up quick facts directly during workflow interviews. Use read-only delegation when it unblocks parallel questions or materially improves the result.
+- Keep the existing model profiles, evidence-based escalation, test-first checks, isolated editing, and independent acceptance of user-facing outcomes.
+
 ## 1.2.1 — 2026-11-22
 
 Outcome-focused validation and complete replacement/removal of existing behavior.

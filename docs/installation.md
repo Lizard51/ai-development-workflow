@@ -13,7 +13,7 @@ skills/domain-modeling. If a skill already exists, preserve it and explain
 the version conflict instead of overwriting it.
 ```
 
-Для воспроизводимой установки укажите тег `v1.2.1`. / Use tag `v1.2.1` to install a fixed version.
+Для воспроизводимой установки укажите тег `v1.3.0`. / Use tag `v1.3.0` to install a fixed version.
 
 Предыдущие версии доступны на [странице релизов](https://github.com/Lizard51/ai-development-workflow/releases). / Earlier versions are available on the [releases page](https://github.com/Lizard51/ai-development-workflow/releases).
 
@@ -22,7 +22,7 @@ the version conflict instead of overwriting it.
 Скачайте исходники со [страницы релизов](https://github.com/Lizard51/ai-development-workflow/releases) либо клонируйте:
 
 ```sh
-git clone --branch v1.2.1 --depth 1 https://github.com/Lizard51/ai-development-workflow.git
+git clone --branch v1.3.0 --depth 1 https://github.com/Lizard51/ai-development-workflow.git
 ```
 
 Для одного проекта скопируйте три папки из `skills/` в `.agents/skills/` внутри нужного проекта. Для пользовательской установки скопируйте их в `~/.agents/skills/`.
@@ -52,9 +52,9 @@ Copy each complete skill folder, not just its entrypoint. Compare existing insta
 
 Compare `skills/ai-development-workflow/` from the new tag with your installed copy. Save a backup and apply the changes in the original installation directory. Existing `grilling` and `domain-modeling` copies from v1.1.0 can stay in place.
 
-При обновлении с v1.2.0 изменился только `references/workflow.md` основного навыка. Остальные файлы навыков, модели и шаблоны остаются прежними; документация пакета описывает обновление.
+После обновления до v1.3.0 оставьте документы проекта на своих местах. Объединять или разносить разделы имеет смысл, когда этого требует сам проект.
 
-When upgrading from v1.2.0, only the main skill's `references/workflow.md` has changed. Other skill files, model profiles, and templates are unchanged; the package documentation describes the update.
+After upgrading to v1.3.0, keep using your existing project documents. Combine or separate sections as the project needs.
 
 ## Проверка / Check
 

@@ -1,6 +1,6 @@
 # Specification
 
-<!-- Initial contract template. During development, update the authoritative requirements here instead of appending competing versions. Keep conditions, exceptions, acceptance criteria, and open questions intact. Link to implementation state and evidence rather than copying them into the contract. -->
+<!-- Record intended behavior and acceptance conditions. Use links for implementation state and evidence. -->
 
 ## Goal
 
