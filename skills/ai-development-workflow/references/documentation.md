@@ -2,9 +2,9 @@
 
 Read project instructions and an existing entry point or current-state section. Then locate only the requirements, plan, task records, source, and evidence relevant to the work. Use history for specific questions.
 
-## Choose the minimum set of records
+## Choose the record layout
 
-Reuse the project's existing files and sections. For a new project, use as many files as the work actually needs, including one combined file when sufficient. The templates below define roles and can be combined or used selectively. Use `.codex/` when a new project needs a dedicated home and has no established convention.
+For a new substantial project, create separate `SPEC.md`, `PLAN.md`, `TASKS.md`, `STATUS.md`, and `VALIDATION.md` files from the templates before implementation. Use `.codex/` unless another location is established or agreed. For small scoped work, combine roles in fewer files when that is sufficient. In existing or resumed projects, reuse the established files and sections that serve these roles.
 
 | Role | What belongs there |
 | --- | --- |
@@ -14,7 +14,7 @@ Reuse the project's existing files and sections. For a new project, use as many 
 | [Status](../assets/STATUS.template.md) | Current phase, blockers, latest outcomes, temporary scope |
 | [Validation](../assets/VALIDATION.template.md) | Baseline, red/green checks, corrected expectations, and acceptance evidence |
 
-Create a separate document when a distinct, lasting purpose has no suitable existing home. Link it from existing navigation. Keep detailed requirements in their authoritative section. Use links and brief summaries in other records. Link a reliable code registry of values or assets when maintaining a second list would add drift.
+Create an additional document when a distinct, lasting purpose has no suitable existing home. Revisit combined records as the project grows and split them when separate files improve navigation, maintenance, or ownership. Link the resulting files from existing navigation. Keep detailed requirements in their authoritative section. Use links and brief summaries in other records. Link a reliable code registry of values or assets when maintaining a second list would add drift.
 
 ## Maintain records by change
 

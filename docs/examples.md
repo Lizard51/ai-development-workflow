@@ -12,7 +12,7 @@ $ai-development-workflow
 согласованный вариант с проверками восстановления данных.
 ```
 
-После изучения контекста и интервью координатор фиксирует согласованные требования и план. Для небольшой мастерской может хватить одного рабочего файла с разделами требований, задач и проверок. До реализации координатор проверяет, что тесты сохранности и восстановления падают по ожидаемой причине. Приёмка включает проверку данных после повторного открытия приложения.
+После изучения контекста и интервью координатор создаёт для нового приложения отдельные `SPEC.md`, `PLAN.md`, `TASKS.md`, `STATUS.md` и `VALIDATION.md` по шаблонам и фиксирует согласованные требования и план. Размер мастерской сам по себе не делает разработку приложения небольшой правкой. Для небольшого ограниченного объёма работ разделы можно объединять; в существующем проекте используется принятая структура. До реализации координатор проверяет, что тесты сохранности и восстановления падают по ожидаемой причине. Приёмка включает проверку данных после повторного открытия приложения.
 
 ## Крупная функция в существующем проекте
 
@@ -43,6 +43,8 @@ Expected: inspect first, resolve actual decisions, record the contract, verify f
 If the CSV is intended for a particular application, verify that it opens there, not merely that a file was created. When replacing the old export, reconcile affected callers, tests, links, and instructions; run a changed documented command exactly as shown or explain what prevented it. Retain historical material with its status clearly marked. Check a failure or conflict when data loss or blocked work is possible; a small edit needs only a focused check of its behavior.
 
 ## Как выбирается исполнитель / How the coordinator picks a worker
+
+Профили: координатор — GPT-6.1 Sol High; Luna Medium — узкие задачи; Terra 6.1 Medium — обычная реализация; Sol 6.1 Medium — сложная работа и эскалация. / Profiles: GPT-6.1 Sol High coordinator, Luna Medium for narrow work, Terra 6.1 Medium for routine implementation, and Sol 6.1 Medium for difficult work or escalation.
 
 В примере с CSV координатор может поручить Luna Medium найти текущие тесты, а Terra Medium — реализовать согласованные правила экспорта. Если экспорт требует согласованного снимка данных во время параллельных изменений, Sol Medium можно сразу поручить проектирование проверок и реализацию этой части. Если обычный экспорт не проходит тест, координатор сначала сверяет ожидаемый результат с требованиями и решает, достаточно ли локальной доработки.
 

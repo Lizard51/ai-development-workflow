@@ -16,7 +16,7 @@ Discover → Specify → Plan → Verify failing acceptance tests
 ## What it does
 
 - Inspects the project and interviews you about unresolved decisions before implementation.
-- Uses as many project documents as needed. Requirements, plan, tasks, status, and evidence may share one file, including in a new project. Each role has an [optional template](skills/ai-development-workflow/assets/).
+- Starts a new substantial project with separate `SPEC.md`, `PLAN.md`, `TASKS.md`, `STATUS.md`, and `VALIDATION.md` files before implementation. Small scoped work can combine roles; existing projects retain their established structure. Each role has a [template](skills/ai-development-workflow/assets/).
 - During ongoing work, updates established documents in place, keeps detailed requirements in one authoritative section, and avoids duplicate plans, handoffs, and iteration reports. See [documentation maintenance](skills/ai-development-workflow/references/documentation.md).
 - Requires new tests to fail for the expected reason before implementing new behavior, with independently reviewed expectations.
 - Delegates only useful independent work, with explicit model profiles and isolated parallel edits.
@@ -31,10 +31,10 @@ Ask Codex:
 
 ```text
 $skill-installer Install skills/ai-development-workflow, skills/grilling,
-and skills/domain-modeling from Lizard51/ai-development-workflow at tag v1.3.0.
+and skills/domain-modeling from Lizard51/ai-development-workflow at tag v1.3.1.
 ```
 
-Select GPT-6.2 Sol with High reasoning for coordination if available, then start a task:
+Select GPT-6.1 Sol with High reasoning for coordination if available, then start a task:
 
 ```text
 $ai-development-workflow
@@ -52,18 +52,18 @@ If the skills do not appear, restart Codex. See [manual and project-local instal
 | [`grilling`](skills/grilling/SKILL.md) | Required requirements interview | Matt Pocock |
 | [`domain-modeling`](skills/domain-modeling/SKILL.md) | Conditional domain glossary and ADR guidance | Matt Pocock |
 
-Current release: [v1.3.0](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.3.0). [All releases](https://github.com/Lizard51/ai-development-workflow/releases).
+Current release: [v1.3.1](https://github.com/Lizard51/ai-development-workflow/releases/tag/v1.3.1). [All releases](https://github.com/Lizard51/ai-development-workflow/releases).
 
-Version 1.3.0 shortens the core instructions and lets agents read details at the relevant stage. The coordinator looks up quick facts during interviews and delegates research when it helps. See the [changelog](CHANGELOG.md#130--2026-11-23).
+Version 1.3.1 restores Sol 6.1 profiles and starts new substantial projects with five separate documents. Terra Medium and evidence-based escalation remain available. See the [changelog](CHANGELOG.md#131--2026-11-28).
 
 ## Model profiles and runtime requirements
 
 | Model | Effort | When to choose it |
 | --- | --- | --- |
-| GPT-6.2 Sol | High | Coordination, architecture decisions, and final acceptance |
+| GPT-6.1 Sol | High | Coordination, architecture decisions, and final acceptance |
 | GPT-6 Luna | Medium | Fact-finding and small edits with straightforward checks |
 | GPT-6.1 Terra | Medium | Routine implementation with clear requirements and independent checks |
-| GPT-6.2 Sol | Medium | Difficult implementation, test design, and escalation |
+| GPT-6.1 Sol | Medium | Difficult implementation, test design, and escalation |
 
 The coordinator can assign difficult work directly to Sol Medium. When Terra's work fails a check, the coordinator diagnoses the cause first. A local defect can get one bounded correction. A substantial or recurring defect can go to Sol Medium with the existing changes and check results.
 

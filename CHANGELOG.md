@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.3.1 — 2026-11-28
+
+Restore Sol 6.1 routing and clarify the default project-document layout.
+
+- Recommend GPT-6.1 Sol High for coordination and GPT-6.1 Sol Medium for difficult implementation and escalation. Keep Luna Medium, Terra 6.1 Medium, and evidence-based escalation.
+- Start new substantial projects with separate SPEC, PLAN, TASKS, STATUS, and VALIDATION files before implementation. Combine roles for small scoped work and reuse established records in existing projects.
+- Split combined records as the project grows when navigation, maintenance, or ownership benefits. Preserve authoritative details and links rather than duplicating them.
+- Align Russian and English READMEs, installation guidance, and examples with the installed skill. Preserve the compact workflow and acceptance checks.
+
+The routing change removes reliance on earlier favorable 6.2 usage observations. No new comparative quality, token-consumption, or subscription-limit measurements are claimed.
+
 ## 1.3.0 — 2026-11-23
 
 Shorten the workflow instructions and make project documentation proportional to the work.

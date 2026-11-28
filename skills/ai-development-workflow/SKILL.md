@@ -5,7 +5,7 @@ description: Turn a substantial software idea or complex feature into a specifie
 
 # AI Development Workflow
 
-The coordinator owns requirements, critical decisions, integration, and final acceptance. Recommend GPT-6.2 Sol High before starting and keep the model the user selected. Git is optional. Pushes, pull requests, merges, deployments, and other external writes require explicit user authorization.
+The coordinator owns requirements, critical decisions, integration, and final acceptance. Recommend GPT-6.1 Sol High before starting and keep the model the user selected. Git is optional. Pushes, pull requests, merges, deployments, and other external writes require explicit user authorization.
 
 ## Discover and confirm
 
@@ -17,7 +17,7 @@ When composing this workflow with `$grilling`, use this fact-finding rule in pla
 
 After confirmation continue the authorized work through acceptance. Ask again for unresolved user decisions, material scope changes, permissions, or external actions.
 
-1. Capture requirements, plan, task ownership, current state, and evidence where they fit. Read [documentation maintenance](references/documentation.md) when choosing or updating records. The five templates are available for these roles. Combine roles in one file or use existing sections when that covers the work.
+1. Read [documentation maintenance](references/documentation.md) when choosing or updating records. Start a new substantial project with separate specification, plan, tasks, status, and validation files. Reuse the established structure in existing projects. For small scoped work, combine roles when separate files add little value.
 2. Follow [the delivery workflow](references/workflow.md) to plan and build. For new behavior, establish the baseline and independently check that acceptance tests fail for the intended reason before implementation. Keep agreed tests fixed during implementation. Use a repeatable alternative when an executable test is unsuitable.
 3. Delegate independent work selectively when its benefit exceeds the briefing and review cost. Use the [routing policy](references/model-routing.md) for assignments, isolation, or escalation. Keep tiny and tightly coupled edits with the coordinator.
 4. Independently review worker results, integrate in dependency order, and verify the affected behavior against the confirmed contract. Apply the delivery workflow's final checks to user-visible outcomes and replacements or removals.

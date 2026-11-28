@@ -6,8 +6,8 @@
 | --- | --- |
 | `gpt-6-luna` / `medium` | Read-only fact-finding, fixtures, mechanical edits, and small functions with independent checks |
 | `gpt-6.1-terra` / `medium` | Ordinary bounded implementation and debugging with a clear contract, including implementing checks whose expectations are settled |
-| `gpt-6.2-sol` / `medium` | Difficult bounded implementation, substantive numerical analysis, or non-trivial test design |
-| Coordinator, preferably `gpt-6.2-sol` / `high` | Requirements, architecture, consequential security or concurrency decisions, and acceptance. Use a separate Sol High reviewer when independent review justifies the overhead. |
+| `gpt-6.1-sol` / `medium` | Difficult bounded implementation, substantive numerical analysis, or non-trivial test design |
+| Coordinator, preferably `gpt-6.1-sol` / `high` | Requirements, architecture, consequential security or concurrency decisions, and acceptance. Use a separate Sol High reviewer when independent review justifies the overhead. |
 
 Assign Sol Medium directly when reasoning or verification requires it. Start with the lightest profile suited to the task and choose one per assignment.
 
@@ -15,7 +15,7 @@ Assign Sol Medium directly when reasoning or verification requires it. Start wit
 
 Check whether the host supports delegation, explicit model and effort, context forks, and available worker slots. Set both model and effort explicitly where supported. For the collaboration tool, use `fork_turns: "none"` with overrides if supported and pass the needed context. Respect the actual schema and avoid full-history forks with overrides. Verify the applied profile when metadata is available.
 
-If Terra is unavailable for ordinary implementation, use a supported Sol Medium profile where appropriate. If Luna is unavailable for a quick lookup or assignment, prefer direct work or a justified supported worker. If differentiated profiles are unavailable, keep the task with the coordinator or justify a supported worker. Disclose and record substitutions and limitations in the task record. Keep the chat's selected model and global settings intact.
+If Terra is unavailable for ordinary implementation, use a supported Sol 6.1 Medium profile where appropriate. If Luna is unavailable for a quick lookup or assignment, prefer direct work or a justified supported worker. If differentiated profiles are unavailable, keep the task with the coordinator or justify a supported worker. Disclose and record substitutions and limitations in the task record. Keep the chat's selected model and global settings intact.
 
 - Use at most three active workers within host limits by default. Wider parallelism requires explicit user authorization and host support.
 - Delegate independent tasks. Parallel editors need non-overlapping ownership and separate writable workspaces. If using Git for isolation, use distinct worktrees. Where safe isolation is unavailable, serialize edits by workers and coordinator. Read-only workers can still run in parallel.
